@@ -3,6 +3,8 @@
 
 #include "config.hpp"
 #include "vector.hpp"
+#include <math.h>
+
 // #include "logger.hpp"
 
 struct TaskPoint {
@@ -77,7 +79,7 @@ bool inverseKinematics(const TaskPoint& t, ConfigurationPoint& c1, Configuration
   float cos_q3 = (distance * distance - LINK_2_LENGTH*LINK_2_LENGTH - LINK_3_LENGTH*LINK_3_LENGTH) / (2 * LINK_2_LENGTH * LINK_3_LENGTH);
 
   // Clamp due to possible numerical issues
-  cos_q3 = clamp(cos_q3, -1.0, 1.0);
+  cos_q3 = clamp<float>(cos_q3, -1.0, 1.0);
 
   // Compute the two possible solutions for q3 (elbow up and down)
   float q3_a = acos(cos_q3);     // Candidate A
