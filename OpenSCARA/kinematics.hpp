@@ -2,6 +2,7 @@
 #define KINEMATICS_HPP
 
 #include "config.hpp"
+#include "vector.hpp"
 // #include "logger.hpp"
 
 struct TaskPoint {
