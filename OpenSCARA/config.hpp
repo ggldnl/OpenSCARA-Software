@@ -17,7 +17,7 @@ const unsigned char STEPPER_4_DIR_PIN = 13; // Axis A requires an optional jumpe
 
 const unsigned char ENABLE = 8;  // Active-low (i.e. LOW turns on the drivers)
 
-const unsigned char STEPPER_1_ENDSTOP_PIN = A3;
+const unsigned char STEPPER_1_ENDSTOP_PIN = 17; // A3
 const unsigned char STEPPER_2_ENDSTOP_PIN = 9;
 const unsigned char STEPPER_3_ENDSTOP_PIN = 10;
 const unsigned char STEPPER_4_ENDSTOP_PIN = 11;
