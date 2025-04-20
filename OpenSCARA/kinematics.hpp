@@ -35,11 +35,22 @@ struct ConfigurationPoint {
   ConfigurationPoint(float _q1, float _q2, float _q3, float _q4) : q1(_q1), q2(_q2), q3(_q3), q4(_q4) {}
 };
 
-float clamp(float val, float min, float max) {
+template<typename T>
+inline T min(T a, T b) {
+  return (a < b) ? a : b;
+}
+
+template<typename T>
+inline T max(T a, T b) {
+  return (a > b) ? a : b;
+}
+
+template<typename T>
+inline T clamp(T val, T min_val, T max_val) {
   /**
    * Clamps a value in the specified range.
    */
-  return max(min(val, min), max);
+  return max(min(val, max_val), min_val);
 }
 
 bool inverseKinematics(const TaskPoint& t, ConfigurationPoint& c1, ConfigurationPoint& c2) {
