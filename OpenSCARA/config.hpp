@@ -3,24 +3,24 @@
 
 // CNC Shield pinout
 
-const byte STEPPER_1_STEP_PIN = 2; 
-const byte STEPPER_1_DIR_PIN = 5;
+const unsigned char STEPPER_1_STEP_PIN = 2; 
+const unsigned char STEPPER_1_DIR_PIN = 5;
 
-const byte STEPPER_2_STEP_PIN = 3;
-const byte STEPPER_2_DIR_PIN = 6;
+const unsigned char STEPPER_2_STEP_PIN = 3;
+const unsigned char STEPPER_2_DIR_PIN = 6;
 
-const byte STEPPER_3_STEP_PIN = 4;
-const byte STEPPER_3_DIR_PIN = 7;
+const unsigned char STEPPER_3_STEP_PIN = 4;
+const unsigned char STEPPER_3_DIR_PIN = 7;
 
-const byte STEPPER_4_STEP_PIN = 12; // Axis A requires an optional jumper
-const byte STEPPER_4_DIR_PIN = 13; // Axis A requires an optional jumper
+const unsigned char STEPPER_4_STEP_PIN = 12; // Axis A requires an optional jumper
+const unsigned char STEPPER_4_DIR_PIN = 13; // Axis A requires an optional jumper
 
-const byte ENABLE = 8;  // Active-low (i.e. LOW turns on the drivers)
+const unsigned char ENABLE = 8;  // Active-low (i.e. LOW turns on the drivers)
 
-const byte STEPPER_1_ENDSTOP_PIN = A3;
-const byte STEPPER_2_ENDSTOP_PIN = 9;
-const byte STEPPER_3_ENDSTOP_PIN = 10;
-const byte STEPPER_4_ENDSTOP_PIN = 11;
+const unsigned char STEPPER_1_ENDSTOP_PIN = A3;
+const unsigned char STEPPER_2_ENDSTOP_PIN = 9;
+const unsigned char STEPPER_3_ENDSTOP_PIN = 10;
+const unsigned char STEPPER_4_ENDSTOP_PIN = 11;
 
 // Velocity and acceleration
 
