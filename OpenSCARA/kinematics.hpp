@@ -189,6 +189,6 @@ Vector<TaskPoint> interpolateLine3D(const TaskPoint& start, const TaskPoint& end
   }
 
   return interpolatedPoints;
-}4
+}
 
 #endif  // KINEMATICS_HPP
