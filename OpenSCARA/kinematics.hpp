@@ -3,27 +3,8 @@
 
 #include "config.hpp"
 #include "vector.hpp"
-#include <math.h>
 
 // #include "logger.hpp"
-
-#ifdef min
-  #undef min
-#endif
-
-#ifdef max
-  #undef max
-#endif
-
-template<typename T>
-inline T min(T a, T b) {
-  return (a < b) ? a : b;
-}
-
-template<typename T>
-inline T max(T a, T b) {
-  return (a > b) ? a : b;
-}
 
 template<typename T>
 inline T clamp(T val, T min_val, T max_val) {
