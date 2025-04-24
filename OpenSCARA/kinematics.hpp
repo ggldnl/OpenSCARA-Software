@@ -81,6 +81,7 @@ bool inverseKinematics(const TaskPoint& t, ConfigurationPoint& c1, Configuration
     return false;
   }
 
+  /*
   float cos_q3 = (distance * distance - LINK_2_LENGTH*LINK_2_LENGTH - LINK_3_LENGTH*LINK_3_LENGTH) / (2 * LINK_2_LENGTH * LINK_3_LENGTH);
 
   // Clamp due to possible numerical issues
@@ -107,6 +108,24 @@ bool inverseKinematics(const TaskPoint& t, ConfigurationPoint& c1, Configuration
   float q1 = t.z;
 
   // Compute wrist angle
+  float q4_a = t.yaw - (q2_a + q3_a);
+  float q4_b = t.yaw - (q2_b + q3_b);
+  */
+
+  // The prismatic joint is taken directly from the target z. Same for both solutions
+  float q1 = t.z;
+
+  float c3 = (t.x * t.x + t.y * t.y - LINK_2_LENGTH * LINK_2_LENGTH - LINK_3_LENGTH * LINK_3_LENGTH) / (2 * LINK_2_LENGTH * LINK_3_LENGTH);
+  float s3_a = sqrt(1 - c3 * c3);
+  float s3_b = -s3_a;
+
+  float q3_a = atan2(s3_a, c3);
+  float q3_b = atan2(s3_b, c3);
+
+  float gamma = atan2(t.y, t.x);
+  float q2_a = gamma - atan2(LINK_3_LENGTH * s3_a, LINK_2_LENGTH + LINK_3_LENGTH * c3);
+  float q2_b = gamma - atan2(LINK_3_LENGTH * s3_b, LINK_2_LENGTH + LINK_3_LENGTH * c3);
+
   float q4_a = t.yaw - (q2_a + q3_a);
   float q4_b = t.yaw - (q2_b + q3_b);
 
@@ -170,6 +189,6 @@ Vector<TaskPoint> interpolateLine3D(const TaskPoint& start, const TaskPoint& end
   }
 
   return interpolatedPoints;
-}
+}4
 
 #endif  // KINEMATICS_HPP
